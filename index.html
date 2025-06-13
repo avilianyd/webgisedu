@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebGIS Bekasi</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+
+<!--leaflet CSS-->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-
+    button.css">
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-
+    fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.css" />
+    <link rel="stylesheet" href="https://balladaniel.github.io/leaflet-dataclassification/leaflet-
+    dataclassification.css" />
+
+<!--leaflet javascript-->
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256
+20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script> 
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script> 
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet
+fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script> 
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js" 
+charset="utf-8"></script> 
+    <script src="https://balladaniel.github.io/leaflet-dataclassification/leaflet
+dataclassification.js"></script> 
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-easybutton@2.4.0/src/easy-button.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.locatecontrol/dist/L.Control.Locate.min.css" />
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256
+20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script> 
+
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-easybutton@2.4.0/src/easy-button.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.locatecontrol/dist/L.Control.Locate.min.css" />
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css" />
+    <!-- Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-easybutton@2.4.0/src/easy-button.js"></script>
+    <script src="https://unpkg.com/leaflet.locatecontrol/dist/L.Control.Locate.min.js"></script>
+    <script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"></script>
+  </head>
+
+<!--Jquery-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">WebGIS Pendidikan Kota Bekasi</div>
+        <ul class="navbar-nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#map-section">Map</a></li>
+            <li><a href="#sejarah-pendidikan-single">Data</a></li>
+            <li><a href="#Author-section">Author</a></li>
+            <li><a href="#footer">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!--Hero Section-->
+    <style>
+.hero-section {
+    background-image: url('asset/kotabekasi.jpg'); /* Ganti dengan nama file dan path gambar kamu */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 100px 20px;
+    color: white;
+    text-align: center;
+}
+.hero-section .hero-content {
+    background: rgba(0, 0, 0, 0.5); /* Opsional: biar teks lebih terbaca */
+    display: inline-block;
+    padding: 20px;
+    border-radius: 10px;
+}
+</style>
+
+    <div id="hero-section" class="hero-section">
+        <div class="hero-content">
+            <h1>Sebaran Fasilitas Pendidikan dan Tenaga Pendidik</h1>
+            <p>Halaman untuk Melakukan Eksplorasi Informasi Pendidikan di Kota Bekasi</p>
+        </div>
+    </div>
+
+    <!--icon section-->
+
+<div class="icon-section">
+    <div class="icon-container">
+        <a href="sejarah.html" class="icon-item">
+            <img src="asset/LOGO SEJARAH_transparent.png" alt="Sejarah" />
+            <p>Sejarah</p>
+        </a>
+        <a href="visimisi.html" class="icon-item">
+            <img src="asset/LOGO VISI MISI_transparent.png" alt="Visi dan Misi" />
+            <p>Visi dan Misi</p>
+        </a>
+        <a href="datastatistik.html" class="icon-item">
+            <img src="asset/LOGO DATA STATISTIK_transparent.png" alt="Data Statistik" />
+            <p>Table Statistik</p>
+        </a>
+    </div>
+</div>
+
+<!--Map Section-->
+
+    <div id="map-section">
+        <div id="map">
+        <!-- akan muncul peta disini -->
+        </div>
+    </div>
+    <section id="sejarah-pendidikan-single">
+        <div class="container">
+            <h2 class="section-title">Sejarah Pendidikan di Kota Bekasi</h2>
+            <div class="sejarah-content-box">
+                <div class="sejarah-era">
+                    <h3>Masa Awal dan Tradisional</h3>
+                    <p>Pendidikan di Bekasi pada masa awal umumnya bersifat tradisional, seperti pendidikan agama di surau atau pesantren. Pengetahuan dan keterampilan diajarkan secara turun-temurun, berfokus pada nilai-nilai lokal dan keagamaan. Belum ada struktur formal seperti sekolah modern.</p>
+                </div>
+                <div class="sejarah-era">
+                    <h3>Era Kolonial dan Awal Perjuangan</h3>
+                    <p>Pada masa kolonial Belanda, mulai diperkenalkan sekolah-sekolah formal, meskipun aksesnya terbatas. Pendidikan menjadi salah satu alat perjuangan kemerdekaan, di mana para pemuda Bekasi mulai menyerap ilmu pengetahuan untuk melawan penjajah dan membangun bangsa. Munculnya "Sekolah Rakyat" menjadi titik awal pendidikan formal yang lebih merata.</p>
+                </div>
+                <div class="sejarah-era">
+                    <h3>Masa Kemerdekaan dan Pembangunan</h3>
+                    <p>Setelah kemerdekaan, upaya pembangunan pendidikan di Kota Bekasi semakin digencarkan. Pemerintah fokus pada pemerataan akses pendidikan, pembangunan gedung-gedung sekolah, serta peningkatan kualitas guru. Banyak sekolah dasar dan menengah didirikan untuk menampung generasi muda yang ingin mengenyam pendidikan.</p>
+                </div>
+                <div class="sejarah-era">
+                    <h3>Era Modern dan Tantangan Global</h3>
+                    <p>Seiring dengan perkembangan zaman dan pertumbuhan Kota Bekasi sebagai kota metropolitan, pendidikan di Bekasi menghadapi tantangan dan peluang baru. Munculnya perguruan tinggi, sekolah kejuruan, dan lembaga kursus menunjukkan diversifikasi pendidikan. Digitalisasi dan tuntutan global menjadi fokus dalam pengembangan kurikulum dan metode pengajaran.</p>
+                </div>
+                <div class="sejarah-era">
+                    <h3>Inovasi dan Masa Depan Pendidikan</h3>
+                    <p>Kota Bekasi terus berupaya melakukan inovasi di bidang pendidikan, termasuk penerapan teknologi dalam pembelajaran, pengembangan pendidikan vokasi yang relevan dengan industri, serta peningkatan kualitas tenaga pendidik. Visi ke depan adalah menciptakan ekosistem pendidikan yang inklusif, berkualitas, dan mampu mencetak generasi yang kompeten dan berdaya saing global.</p>
+                </div>
+            </div>
+            <p class="source-text">Informasi sejarah disarikan dari berbagai sumber mengenai perkembangan pendidikan di daerah urban.</p>
+        </div>
+    </section>
+    <section id="visi-misi-pendidikan">
+        <div class="container">
+            <h2 class="section-title">Visi dan Misi Pendidikan Kota Bekasi</h2>
+    
+            <div class="vm-container">
+                <div class="vm-card visi-card">
+                    <h3>Visi Pendidikan</h3>
+                    <p>Mewujudkan generasi Kota Bekasi yang cerdas, berkarakter mulia, berdaya saing global, dan berlandaskan nilai-nilai religius serta budaya lokal.</p>
+                </div>
+    
+                <div class="vm-card misi-card">
+                    <h3>Misi Pendidikan</h3>
+                    <ul>
+                        <li>Meningkatkan kualitas sumber daya manusia melalui pendidikan yang inklusif dan merata.</li>
+                        <li>Mengembangkan kurikulum yang relevan dengan kebutuhan industri dan tantangan masa depan.</li>
+                        <li>Membangun ekosistem pendidikan yang kondusif dan mendukung kreativitas serta inovasi.</li>
+                        <li>Meningkatkan profesionalisme tenaga pendidik dan kependidikan.</li>
+                        <li>Memperkuat kolaborasi antara sekolah, keluarga, dan masyarakat dalam mendukung proses pendidikan.</li>
+                        <li>Menanamkan nilai-nilai kebangsaan, moral, dan etika sejak dini.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="statistik-data">
+        <div class="container">
+            <h2 class="section-title">Statistik Pendidikan Kota Bekasi</h2>
+    
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">&#127891;</div> <div class="stat-number" data-target="1250">0</div>
+                    <div class="stat-label">Jumlah Sekolah</div>
+                </div>
+    
+                <div class="stat-card">
+                    <div class="stat-icon">&#128100;</div> <div class="stat-number" data-target="500000">0</div>
+                    <div class="stat-label">Jumlah Siswa</div>
+                </div>
+    
+                <div class="stat-card">
+                    <div class="stat-icon">&#128105;</div> <div class="stat-number" data-target="25000">0</div>
+                    <div class="stat-label">Jumlah Tenaga Pendidik</div>
+                </div>
+    
+                <div class="stat-card">
+                    <div class="stat-icon">&#128218;</div> <div class="stat-number" data-target="95">0</div>
+                    <div class="stat-label">Angka Partisipasi Pendidikan (%)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const statNumbers = document.querySelectorAll('.stat-number');
+    
+            const animateNumber = (obj, start, end, duration) => {
+                let startTimestamp = null;
+                const step = (timestamp) => {
+                    if (!startTimestamp) startTimestamp = timestamp;
+                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                    obj.innerHTML = Math.floor(progress * (end - start) + start).toLocaleString('id-ID'); // Format angka Indonesia
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    }
+                };
+                window.requestAnimationFrame(step);
+            };
+    
+            const isInViewport = (element) => {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            };
+    
+            const handleScroll = () => {
+                statNumbers.forEach(stat => {
+                    if (!stat.hasAnimated && isInViewport(stat)) {
+                        stat.hasAnimated = true; // Menandai sudah dianimasikan
+                        const target = parseInt(stat.getAttribute('data-target'));
+                        animateNumber(stat, 0, target, 2000); // Animasi 2 detik
+                    }
+                });
+            };
+    
+            // Trigger animasi saat scroll
+            window.addEventListener('scroll', handleScroll);
+            // Trigger juga saat DOMContentLoaded untuk elemen yang sudah terlihat saat halaman dimuat
+            handleScroll();
+        });
+    </script>
+
+<div id="author-section">
+  <div class="author-content">
+    <h2>Tentang Pembuat</h2>
+    <div class="image-container">
+      <img src="asset/FOTOAVIROMPI.jpg" alt="profile-picture">
+    </div>
+    <p class="author-name">Aviliany Danuri</p>
+    <p class="author-bio">
+      Aviliany Danuri, seorang mahasiswi program studi Sains Informasi Geografi yang saat ini sedang menempuh pendidikan jenjang Sarjana (S1), salah satu mahasiswa yang gemar mencoba hal-hal baru, terutama yang berkaitan dengan bidang kebumian dan teknologi geospasial. Ketertarikannya terhadap geografi membawanya fokus pada penginderaan jauh dan sistem informasi geografis (SIG) juga memiliki motivasi kuat untuk mengembangkan kompetensinya agar kelak dapat berkontribusi dalam pemanfaatan SIG untuk berbagai bidang, termasuk pengelolaan lingkungan dan mitigasi bencana.
+    </p>
+  </div>
+</div>
+
+<div id="footer">
+  <div class="footer-content">
+    <h3>Contact Person</h3>
+    <p>Email: aviliany88@gmail.com</p>
+    <p>Phone: +628979571023</p>
+  </div>
+</div>
+
+
+<script src="js/script.js"></script>
+
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
+integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+<!-- Leaflet Plugin JS -->
+<script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+<script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js"></script>
+<script src="https://balladaniel.github.io/leaflet-dataclassification/leaflet-dataclassification.js"></script>
+
+<!-- jQuery untuk AJAX requests -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Script utama -->
+<script src="js/script.js"></script>
+</body>
+</html>

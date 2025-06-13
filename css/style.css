@@ -1,0 +1,611 @@
+/* Style Kerangka Secara Umum */
+html {
+    scroll-behavior: smooth;
+    font-family: sans-serif;
+    caret-color: transparent;
+    }
+    body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    }
+    /* Seluruh Komponen Pada Header */
+    .logo {
+    display: flex; /* Use flexbox */
+    align-items: center; /* Align items vertically */
+    }
+    .logo img {
+    width: 80px; /* Set the width of the logo */
+    margin-right: 10px; /* Add some space between the image and title */
+    }
+    .logo h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    }
+    header nav {
+    display: flex;
+    justify-content: flex-start;
+    }
+    header nav a {
+    color:#fafafa;
+    text-decoration:none;
+    font-weight: bold;
+    margin: 0 20px;
+    }
+body {
+    font-family: Arial, sans-serif;
+    padding: 40px;
+    margin: 0;
+    background: linear-gradient(to bottom, #ffffff,#ffd59e, #ffdb77);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    margin-top: 50px; /* Tambahkan jarak di atas container */
+    margin-bottom: 50px; /* Tambahkan jarak di bawah container */
+}
+
+.icon-item {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px; /* Tambahkan jarak atas masing-masing item */
+    margin-bottom: 20px; /* Tambahkan jarak bawah masing-masing item */
+    color: firebrick;
+}
+
+.icon-item img {
+    width: 250px;
+    height: auto;
+}
+.icon-item {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #8B0000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.icon-item:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+/* --- Opsi Penyesuaian Warna 1: Hijau Kebiruan (Modern & Menenangkan) --- */
+:root {
+    --primary-color: #ff8800; /* Teal (Hijau Kebiruan) */
+    --secondary-color: #e0f2f1; /* Hijau Kebiruan sangat terang untuk latar belakang */
+    --text-color: #424242; /* Abu-abu gelap untuk teks */
+    --white-color: #ffffff;
+    --hover-color: #00695C; /* Teal lebih gelap untuk hover */
+    --border-radius: 5px;
+    --shadow-color: rgba(0, 0, 0, 0.08); /* Sedikit lebih ringan */
+}
+
+/* Tambahkan/perbarui bagian .navbar untuk menggunakan shadow-color baru */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent !important; /* pakai !important untuk override paksa */
+    padding: 15px 30px;
+    box-shadow: none; 
+    border-bottom: none; 
+}
+
+.navbar-brand {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.navbar-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+}
+
+.navbar-nav li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: var(--primary-color);
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease-in-out;
+}
+
+.navbar-nav li a:hover {
+    color: var(--primary-color);
+}
+
+.navbar-nav li a:hover::after {
+    width: 100%;
+}
+
+.navbar-nav li a.active {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+.navbar-nav li a.active::after {
+    width: 100%;
+}
+.hero-section {
+    margin-top: 60px; /* Adjust margin to make room for fixed navbar */
+    background-image:
+    url('https://www.tripsavvy.com/thmb/SOnmosQsIiXiHzNonv2BDMGC4n0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1004877052-58ce1095ed954946a94477fb25766c0f.jpg'); /* Replace
+    'city-background.jpg' with your image */
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    }
+
+    .hero-content {
+        background-color: rgba(0, 0, 0, 0.7); 
+        padding: 20px;
+        border-radius: 10px;
+        color: #ffffff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    h2, .section-title {
+        color: #d47049; 
+    }
+    h3, .section-title {
+        color: #ff8800; 
+    }
+
+/* Map Section */
+#map {
+    width: 90%;
+    height: 600px;
+   background-color: linear-gradient(135deg, #B22222, #ffffff);
+    margin: 40px auto; /* Adjusted margin for space */
+    border: 2px solid #ccc; /* Add a border with a subtle color */
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative; /* Relative positioning for child elements */
+    z-index: 1; /* Set z-index to be behind the header */
+}
+
+    /* Author Section */ 
+#author-section {
+  background: #ffffff;
+  padding: 40px 20px;
+  color: #000;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.author-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.author-content h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: rgba(128, 105, 0, 0);
+  font-weight: bold;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.image-container img {
+  width: 100px;
+  height: 130px;
+  border-radius: 50% / 40%; /* membuat lonjong vertikal */
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.author-name {
+  font-weight: bold;
+  color: #d47049;
+  margin-bottom: 20px;
+}
+
+.author-bio {
+  text-align: justify;
+  color: #d35400; /* oranye agak tua */
+  line-height: 1.6;
+}
+
+#footer {
+  background-color: #d35400;
+  text-align: center;
+  padding: 30px 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.footer-content h3 {
+  color: #d35400;
+  margin-bottom: 15px;
+}
+
+.footer-content p {
+  color: #ffcbb7;
+  margin: 5px 0;
+}
+
+
+
+.container {
+    max-width: 1500px; /* Lebar container lebih disesuaikan untuk satu kotak */
+    margin: 0 auto;
+    padding: 5px 25px;
+}
+
+#sejarah-pendidikan-single {
+    padding: 0px 0;
+    color: var(--text-color);
+}
+
+.section-title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 60px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 90px;
+    height: 5px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+.sejarah-content-box {
+    background-color: var(--white-color);
+    padding: 40px 50px; /* Padding dalam kotak */
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 25px var(--shadow-color); /* Bayangan yang sedikit lebih menonjol */
+}
+
+.sejarah-era {
+    margin-bottom: 30px; /* Jarak antar setiap era */
+}
+
+.sejarah-era:last-child {
+    margin-bottom: 0; /* Hapus margin bawah pada era terakhir */
+}
+
+.sejarah-era h3 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px; /* Ukuran judul era */
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--primary-color); /* Garis bawah pada setiap judul era */
+    display: inline-block; /* Agar garis bawah hanya sepanjang teks */
+}
+
+.sejarah-era p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-color);
+}
+
+.source-text {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    color: var(--text-color);
+    text-align: center;
+    margin-top: 50px;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+/* Responsiveness */
+@media (max-width: 900px) {
+    .container {
+        padding: 20px;
+    }
+    .sejarah-content-box {
+        padding: 30px;
+    }
+    .sejarah-era h3 {
+        font-size: 22px;
+    }
+    .sejarah-era p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    #sejarah-pendidikan-single {
+        padding: 60px 0;
+    }
+    .section-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+    .section-title::after {
+        width: 70px;
+        height: 3px;
+    }
+    .sejarah-content-box {
+        padding: 20px;
+    }
+    .sejarah-era h3 {
+        font-size: 20px;
+    }
+    .sejarah-era p {
+        font-size: 14px;
+    }
+    .source-text {
+        margin-top: 30px;
+        font-size: 12px;
+    }
+}
+
+
+
+#visi-misi-pendidikan {
+    padding: 10px 0; /* Latar belakang putih untuk kontras */
+    color: var(--text-color);
+}
+
+/* Judul bagian akan sama dengan section sejarah */
+/* .section-title { ... } - ini sudah didefinisikan sebelumnya, tidak perlu diulang */
+/* .section-title::after { ... } - ini sudah didefinisikan sebelumnya, tidak perlu diulang */
+
+.vm-container {
+    display: flex; /* Menggunakan flexbox untuk penataan kartu Visi & Misi */
+    flex-wrap: wrap; /* Memungkinkan kartu untuk wrap ke baris berikutnya pada layar kecil */
+    gap: 30px; /* Jarak antar kartu */
+    justify-content: center; /* Pusatkan kartu jika ada ruang lebih */
+    margin-top: 20px; /* Sedikit jarak dari judul */
+}
+
+.vm-card {
+    background-color: var(--secondary-color); /* Latar belakang hijau/biru terang dari nav bar */
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 20px var(--shadow-color);
+    flex: 1 1 45%; /* Fleksibel, ambil 45% lebar, memungkinkan dua kolom */
+    min-width: 300px; /* Lebar minimum untuk setiap kartu */
+    max-width: 550px; /* Lebar maksimum agar tidak terlalu lebar */
+    display: flex; /* Untuk konten di dalam kartu */
+    flex-direction: column;
+    align-items: flex-start; /* Konten dimulai dari kiri atas */
+}
+
+.vm-card h3 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 28px;
+    color: var(--primary-color); /* Warna utama dari nav bar */
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--primary-color); /* Garis bawah yang lebih menonjol */
+    display: inline-block; /* Agar garis bawah hanya sepanjang teks */
+}
+
+.vm-card p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 0; /* Hapus margin bawah default p */
+}
+
+.vm-card ul {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-top: 15px; /* Jarak dari judul misi */
+    padding-left: 25px; /* Indentasi daftar */
+    list-style-type: none; /* Hapus bullet default */
+}
+
+.vm-card ul li {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.vm-card ul li::before {
+    content: '\2713'; /* Tanda centang Unicode sebagai bullet */
+    color: var(--primary-color); /* Warna tanda centang */
+    font-weight: bold;
+    display: inline-block;
+    width: 1.5em; /* Memberi ruang untuk tanda centang */
+    margin-left: -1.5em; /* Menggeser tanda centang ke kiri */
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .vm-container {
+        flex-direction: column; /* Ubah ke satu kolom pada layar kecil */
+        align-items: center; /* Pusatkan kartu */
+    }
+    .vm-card {
+        flex: 1 1 90%; /* Ambil lebar penuh yang tersedia */
+        max-width: 500px; /* Tetap ada max-width agar tidak terlalu lebar di layar kecil */
+        padding: 30px;
+    }
+    .vm-card h3 {
+        font-size: 24px;
+    }
+    .vm-card p,
+    .vm-card ul {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .vm-card {
+        padding: 25px;
+    }
+    .vm-card h3 {
+        font-size: 22px;
+    }
+    .vm-card ul {
+        padding-left: 20px;
+    }
+}
+
+
+
+#statistik-data {
+    padding: 80px 0;
+    color: var(--text-color);
+}
+
+/* Judul bagian akan sama dengan section lainnya */
+/* .section-title { ... } - ini sudah didefinisikan sebelumnya, tidak perlu diulang */
+/* .section-title::after { ... } - ini sudah didefinisikan sebelumnya, tidak perlu diulang */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Kolom responsif, min lebar 220px */
+    gap: 30px; /* Jarak antar kartu statistik */
+    justify-content: center; /* Pusatkan kartu */
+    margin-top: 50px;
+}
+
+.stat-card {
+    background-color: var(--white-color); /* Latar belakang putih untuk setiap kartu */
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 20px var(--shadow-color);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* Untuk menata konten vertikal di tengah */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.stat-icon {
+    font-size: 50px; /* Ukuran ikon */
+    color: var(--primary-color); /* Warna ikon */
+    margin-bottom: 15px;
+    line-height: 1; /* Pastikan tidak ada spasi ekstra */
+}
+
+.stat-number {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 48px; /* Ukuran angka besar */
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-color);
+    text-transform: uppercase; /* Teks label dalam huruf besar */
+    letter-spacing: 0.5px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Dua kolom pada layar sedang */
+        gap: 25px;
+    }
+    .stat-card {
+        padding: 25px;
+    }
+    .stat-icon {
+        font-size: 45px;
+    }
+    .stat-number {
+        font-size: 42px;
+    }
+    .stat-label {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 500px) {
+    .stats-grid {
+        grid-template-columns: 1fr; /* Satu kolom pada layar kecil */
+        gap: 20px;
+    }
+    .stat-card {
+        padding: 20px;
+    }
+    .stat-icon {
+        font-size: 40px;
+    }
+    .stat-number {
+        font-size: 38px;
+    }
+    .stat-label {
+        font-size: 15px;
+    }
+}
+    
+    .legend {
+        padding: 6px 8px;
+        background-color: rgba(255,255,255,0.8);
+        box-shadow: 0 0 15px rgba(0,0,0,0.2);
+border-radius: 5px;
+}
+.legend div {
+width: 30px;
+height: 15px;
+float: left;
+margin-right: 8px;
+opacity: 0.7;
+}
+div.legend.leaflet-control br {
+clear: both;
+}
